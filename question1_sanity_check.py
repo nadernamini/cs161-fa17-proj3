@@ -12,6 +12,7 @@ URG = 0x20
 ECE = 0x40
 CWR = 0x80
 
+
 # ANSI Color
 class bcolors:
     HEADER = '\033[95m'
@@ -23,8 +24,10 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 str_OK = bcolors.OKGREEN + 'OK' + bcolors.ENDC
 str_ERROR = bcolors.FAIL + 'ERROR' + bcolors.ENDC
+
 
 def main(pcap_file):
     num_rst = 0
@@ -44,9 +47,9 @@ def main(pcap_file):
     print '[%s] %d TCP reset packets in pcap' % (str_OK if num_rst >= 2 else str_ERROR, num_rst)
     print '[%s] HTTP 404 Status %s' % ((str_OK, 'Found') if has_404 else (str_ERROR, 'Missing'))
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print 'usage: python question1_sanity_check.py [pcap_file]'
     else:
         main(sys.argv[1])
-        
