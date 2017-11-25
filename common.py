@@ -184,7 +184,7 @@ class PacketUtils:
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
         pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port, seq=s_seq + 1, ack=d_seq + 1)
-	get = self.get_pkt()
+        get = self.get_pkt()
         while get:
             if isRST(get):
                 return "FIREWALL"
