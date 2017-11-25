@@ -23,13 +23,14 @@ def interfaces():
         else:
             interface = line.split(':')[0].split(' ')[0]
             interfaces[interface] = ""
-            ethernets[interface] = line.split()[len(line.split())-1]
+            ethernets[interface] = line.split()[len(line.split()) - 1]
     check = []
     for i in interfaces:
         if interfaces[i] != "" and interfaces[i][0] != "127.0.0.1":
             check.append((i, interfaces[i], ethernets[i]))
     check.sort()
-    return check[len(check)-1]
+    return check[len(check) - 1]
+
 
 if __name__ == "__main__":
     print interfaces()

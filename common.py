@@ -16,15 +16,19 @@ maxhop = 25
 
 triggerfetch = """YOU MIGHT WANT SOMETHING HERE"""
 
+
 # A couple useful functions that take scapy packets
 def isRST(p):
     return (TCP in p) and (p[IP][TCP].flags & 0x4 != 0)
 
+
 def isICMP(p):
     return ICMP in p
 
+
 def isTimeExceeded(p):
     return ICMP in p and p[IP][ICMP].type == 11
+
 
 # A general python object to handle a lot of this stuff...
 #
@@ -50,10 +54,10 @@ class PacketUtils:
 
         # Get the destination ethernet address with an ARP
         self.arp()
-        
+
         # You can add other stuff in here to, e.g. keep track of
         # outstanding ports, etc.
-        
+
         # Start the packet sniffer
         t = threading.Thread(target=self.run_sniffer)
         t.daemon = True
@@ -77,16 +81,15 @@ class PacketUtils:
         sys.stderr.write("Gateway %s\n" % gateway)
         a = ARP(hwsrc=self.enet,
                 pdst=gateway)
-        p = srp1([e/a], iface=self.iface, verbose=0)
+        p = srp1([e / a], iface=self.iface, verbose=0)
         self.etherdst = p[Ether].src
         sys.stderr.write("Ethernet destination %s\n" % (self.etherdst))
-
 
     # A function to send an individual packet.
     def send_pkt(self, payload=None, ttl=32, flags="",
                  seq=None, ack=None,
-                 sport=None, dport=80,ipid=None,
-                 dip=None,debug=False):
+                 sport=None, dport=80, ipid=None,
+                 dip=None, debug=False):
         if sport == None:
             sport = random.randint(1024, 32000)
         if seq == None:
@@ -102,20 +105,19 @@ class PacketUtils:
                 dst=self.dst,
                 id=ipid,
                 ttl=ttl)
-        p = ip/t
+        p = ip / t
         if payload:
-            p = ip/t/payload
+            p = ip / t / payload
         else:
             pass
         e = Ether(dst=self.etherdst,
                   type=0x0800)
         # Have to send as Ethernet to avoid interface issues
-        sendp([e/p], verbose=1, iface=self.iface)
+        sendp([e / p], verbose=1, iface=self.iface)
         # Limit to 20 PPS.
         time.sleep(.05)
         # And return the packet for reference
         return p
-
 
     # Has an automatic 5 second timeout.
     def get_pkt(self, timeout=5):
@@ -152,7 +154,7 @@ class PacketUtils:
     # server itself (from a previous traceroute incantation
     def evade(self, target, msg, ttl):
         return "NEED TO IMPLEMENT"
-        
+
     # Returns "DEAD" if server isn't alive,
     # "LIVE" if teh server is alive,
     # "FIREWALL" if it is behind the Great Firewall
