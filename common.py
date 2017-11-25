@@ -162,6 +162,7 @@ class PacketUtils:
         # self.send_msg([triggerfetch], dst=target, syn=True)
         port = random.randint(2000, 30000)
         pckt = self.send_pkt(flags="S", sport=port)
+        print("B:", pckt[TCP].flags)
         get = self.get_pkt()
         if not get:
             return "DEAD"
