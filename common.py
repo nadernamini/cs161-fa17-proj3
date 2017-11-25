@@ -165,7 +165,7 @@ class PacketUtils:
         get = self.get_pkt()
         if not get:
             return "DEAD"
-        print(get[TCP].flags)
+        print "A: ", get[TCP].flags
         return "NEED TO IMPLEMENT"
 
     # Format is
