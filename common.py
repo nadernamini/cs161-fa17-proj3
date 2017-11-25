@@ -140,7 +140,7 @@ class PacketUtils:
     def run_sniffer(self):
         sys.stderr.write("Sniffer started\n")
         rule = "src net %s or icmp" % self.dst
-        sys.stderr.write("Sniffer rule \"%s\"\n" % rule);
+        sys.stderr.write("Sniffer rule \"%s\"\n" % rule)
         sniff(prn=self.sniffer,
               filter=rule,
               iface=self.iface,
@@ -156,10 +156,16 @@ class PacketUtils:
         return "NEED TO IMPLEMENT"
 
     # Returns "DEAD" if server isn't alive,
-    # "LIVE" if teh server is alive,
+    # "LIVE" if the server is alive,
     # "FIREWALL" if it is behind the Great Firewall
     def ping(self, target):
         # self.send_msg([triggerfetch], dst=target, syn=True)
+        port = random.randint(2000, 30000)
+        pckt = self.send_pkt(flags="S", sport=port)
+        get = self.get_pkt()
+        if not get:
+            return "DEAD"
+        print(get[TCP].flags)
         return "NEED TO IMPLEMENT"
 
     # Format is
