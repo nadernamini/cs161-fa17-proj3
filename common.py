@@ -184,6 +184,7 @@ class PacketUtils:
         while get:
             if isRST(get):
                 return "FIREWALL"
+            get = self.get_pkt()
         return "LIVE"
 
     # Format is
