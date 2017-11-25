@@ -178,6 +178,9 @@ class PacketUtils:
             return "DEAD"
         d_seq = get[TCP].seq
         d_ack = get[TCP].ack
+        # check if ACK == Seq + 1
+        if d_ack != s_seq + 1:
+            return "DEAD"
         # ACK sent
         pckt = self.send_pkt(flags="PA",  payload=triggerfetch, sport=port, seq=s_seq + 1, ack=d_seq + 1)
         get = self.get_pkt()
