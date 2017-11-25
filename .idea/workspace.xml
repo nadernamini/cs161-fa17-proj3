@@ -82,8 +82,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="349">
+              <caret line="175" column="27" lean-forward="true" selection-start-line="175" selection-start-column="27" selection-end-line="175" selection-end-column="27" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -217,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511646304067</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[Q1] fixed the triggerfetch">
+      <created>1511646482529</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1511646482529</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -260,7 +267,8 @@
     <MESSAGE value="[Q1] added check  for SYN/ACK" />
     <MESSAGE value="[Q1] added print statements to check behavior" />
     <MESSAGE value="[Q1] implemented def ping in common.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q1] implemented def ping in common.py" />
+    <MESSAGE value="[Q1] fixed the triggerfetch" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q1] fixed the triggerfetch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -468,8 +476,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="349">
+          <caret line="175" column="27" lean-forward="true" selection-start-line="175" selection-start-column="27" selection-end-line="175" selection-end-column="27" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>

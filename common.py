@@ -168,7 +168,6 @@ class PacketUtils:
     # "LIVE" if the server is alive,
     # "FIREWALL" if it is behind the Great Firewall
     def ping(self, target):
-        # self.send_msg([triggerfetch], dst=target, syn=True)
         port = random.randint(2000, 30000)
         # SYN sent
         pckt = self.send_pkt(flags="S", sport=port)
@@ -182,10 +181,10 @@ class PacketUtils:
         # ACK sent
         pckt = self.send_pkt(flags="PA",  payload=triggerfetch, sport=port, seq=s_seq + 1, ack=d_seq + 1)
         get = self.get_pkt()
-        if isRST(get):
-            return "FIREWALL"
-        else:
-            return "LIVE"
+        while get:
+            if isRST(get):
+                return "FIREWALL"
+        return "LIVE"
 
     # Format is
     # ([], [])
