@@ -23,7 +23,7 @@ maxhop = 25
 # A request that will trigger the great firewall but will NOT cause
 # the web server to process the connection.  You probably want it here
 
-triggerfetch = "GET /search?q=Falun+Gong HTTP/1.1\r\nHost: www.google.com\r\n\r\n"
+triggerfetch = "GET / HTTP/1.1\r\nHost: www.baidu.com\r\n\r\n"
 
 
 # A couple useful functions that take scapy packets
