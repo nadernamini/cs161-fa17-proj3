@@ -185,7 +185,7 @@ class PacketUtils:
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
         """
-        self.hndsk(target)
+        port, s_seq, d_seq = self.hndsk(target)
         pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port, seq=s_seq + 1, ack=d_seq + 1)
         get = self.get_pkt()
         while get:
@@ -210,7 +210,7 @@ class PacketUtils:
             return "DEAD"
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
-        return None
+        return port, s_seq, d_seq
 
     # Format is
     # ([], [])
