@@ -168,6 +168,7 @@ class PacketUtils:
     # "LIVE" if the server is alive,
     # "FIREWALL" if it is behind the Great Firewall
     def ping(self, target):
+        """
         port = random.randint(2000, 30000)
         # SYN sent
         pckt = self.send_pkt(flags="S", sport=port)
@@ -183,6 +184,8 @@ class PacketUtils:
             return "DEAD"
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
+        """
+        self.hndsk(target)
         pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port, seq=s_seq + 1, ack=d_seq + 1)
         get = self.get_pkt()
         while get:
@@ -190,6 +193,24 @@ class PacketUtils:
                 return "FIREWALL"
             get = self.get_pkt()
         return "LIVE"
+
+    def hndsk(self, target):
+        port = random.randint(2000, 30000)
+        # SYN sent
+        pckt = self.send_pkt(flags="S", sport=port)
+        s_seq = pckt[TCP].seq
+        # SYN/ACK received?
+        get = self.get_pkt()
+        if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
+            return "DEAD"
+        d_seq = get[TCP].seq
+        d_ack = get[TCP].ack
+        # check if ACK == Seq + 1
+        if d_ack != s_seq + 1:
+            return "DEAD"
+        # ACK sent
+        pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
+        return None
 
     # Format is
     # ([], [])

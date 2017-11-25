@@ -3,16 +3,17 @@
 import sys
 import common
 
+
 def print_tr(path, status):
     for x in range(len(path)):
         msg = " "
         if status[x]:
             msg = "*"
-        print " %2i: %s %s" % (x+1,
+        print " %2i: %s %s" % (x + 1,
                                msg,
                                path[x])
 
-    
+
 if __name__ == '__main__':
     # www.miit.gov.cn                                                           
     target = "202.106.121.6"
@@ -26,7 +27,3 @@ if __name__ == '__main__':
     tr = common.PacketUtils(dst=target)
     res = tr.traceroute(target, 24)
     print_tr(res[0], res[1])
-    
-
-
-
