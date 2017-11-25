@@ -171,15 +171,18 @@ class PacketUtils:
         # self.send_msg([triggerfetch], dst=target, syn=True)
         port = random.randint(2000, 30000)
         # SYN sent
-        _ = self.send_pkt(flags="S", sport=port)
+        pckt = self.send_pkt(flags="S", sport=port)
+        s_seq = pckt[TCP].seq
         print()
         # SYN/ACK received?
         get = self.get_pkt()
         if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             return "DEAD"
-        print("o", get[TCP].ack, get[TCP].syn, get[TCP].seq)
+        d_seq = get[TCP].seq
+        d_ack = get[TCP].ack
+        print(d_ack, s_seq + 1, "asdas")
         # ACK sent
-        _ = self.send_pkt(flags="A", sport=port)
+        _ = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
         # pckt = self.send_pkt(payload=triggerfetch, sport=port)
         return "NEED TO IMPLEMENT"
 
