@@ -23,7 +23,7 @@ maxhop = 25
 # A request that will trigger the great firewall but will NOT cause
 # the web server to process the connection.  You probably want it here
 
-triggerfetch = """YOU MIGHT WANT SOMETHING HERE"""
+triggerfetch = "a"
 
 
 # A couple useful functions that take scapy packets
@@ -170,13 +170,17 @@ class PacketUtils:
     def ping(self, target):
         # self.send_msg([triggerfetch], dst=target, syn=True)
         port = random.randint(2000, 30000)
-        pckt = self.send_pkt(flags="S", sport=port)
-        print("B:", pckt[TCP].flags)
-
+        # SYN sent
+        _ = self.send_pkt(flags="S", sport=port)
+        print()
+        # SYN/ACK received?
         get = self.get_pkt()
         if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             return "DEAD"
-        print "A: ", get[TCP].flags
+        print("o", get[TCP].ack, get[TCP].syn, get[TCP].seq)
+        # ACK sent
+        _ = self.send_pkt(flags="A", sport=port)
+        # pckt = self.send_pkt(payload=triggerfetch, sport=port)
         return "NEED TO IMPLEMENT"
 
     # Format is
