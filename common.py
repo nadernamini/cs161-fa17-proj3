@@ -173,7 +173,6 @@ class PacketUtils:
         # SYN sent
         pckt = self.send_pkt(flags="S", sport=port)
         s_seq = pckt[TCP].seq
-        print()
         # SYN/ACK received?
         get = self.get_pkt()
         if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
