@@ -9,6 +9,15 @@ import json
 import Queue
 import interfaces
 
+# TCP-Flags
+FIN = 0x01
+SYN = 0x02
+RST = 0x04
+PSH = 0x08
+ACK = 0x10
+URG = 0x20
+ECE = 0x40
+CWR = 0x80
 maxhop = 25
 
 # A request that will trigger the great firewall but will NOT cause
@@ -19,7 +28,7 @@ triggerfetch = """YOU MIGHT WANT SOMETHING HERE"""
 
 # A couple useful functions that take scapy packets
 def isRST(p):
-    return (TCP in p) and (p[IP][TCP].flags & 0x4 != 0)
+    return (TCP in p) and (p[IP][TCP].flags & RST != 0)
 
 
 def isICMP(p):
@@ -163,8 +172,9 @@ class PacketUtils:
         port = random.randint(2000, 30000)
         pckt = self.send_pkt(flags="S", sport=port)
         print("B:", pckt[TCP].flags)
+
         get = self.get_pkt()
-        if not get:
+        if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             return "DEAD"
         print "A: ", get[TCP].flags
         return "NEED TO IMPLEMENT"
