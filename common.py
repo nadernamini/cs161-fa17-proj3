@@ -23,7 +23,7 @@ maxhop = 25
 # A request that will trigger the great firewall but will NOT cause
 # the web server to process the connection.  You probably want it here
 
-triggerfetch = "a"
+triggerfetch = "GET /search?q=Falun+Gong HTTP/1.1 host: www.google.com"
 
 
 # A couple useful functions that take scapy packets
@@ -180,11 +180,13 @@ class PacketUtils:
             return "DEAD"
         d_seq = get[TCP].seq
         d_ack = get[TCP].ack
-        print(d_ack, s_seq + 1, "asdas")
         # ACK sent
-        _ = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
-        # pckt = self.send_pkt(payload=triggerfetch, sport=port)
-        return "NEED TO IMPLEMENT"
+        pckt = self.send_pkt(flags="PA",  payload=triggerfetch, sport=port, seq=s_seq + 1, ack=d_seq + 1)
+        get = self.get_pkt()
+        if isRST(get):
+            return "FIREWALL"
+        else:
+            return "LIVE"
 
     # Format is
     # ([], [])
