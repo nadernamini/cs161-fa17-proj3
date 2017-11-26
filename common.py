@@ -230,32 +230,36 @@ class PacketUtils:
     def traceroute(self, target, hops):
         ips, trus = [], []
         for i in range(hops):
+            print(i)
             rv = self.hndsk(target)
             if rv == "DEAD":
                 trus.append(False)
                 ips.append(None)
             else:
                 port, d_ack, d_seq = rv
-                c, found = 0, False
-                while c < 3 and not found:
+                c = 0
+                while c < 3:
                     pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
                                          seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
-                    get = self.get_pkt()
-                    tex, ipps = False, []
-                    while get and not found:
-                        if isRST(get):
-                            trus.append(True)
-                            ips.append(get[IP].src)
-                            found = True
-                        elif isTimeExceeded(get):
-                            tex = True
-                            ipps.append(get[IP].src)
-                        get = self.get_pkt()
-                    if not found:
-                        if tex:
-                            ips.append(ipps[0])
-                        else:
-                            ips.append(None)
-                        trus.append(False)
                     c += 1
+                found = False
+                get = self.get_pkt()
+                tex, ipps = False, []
+                while get and not found:
+                    ip = get[IP].src
+                    if isRST(get):
+                        trus.append(True)
+                        ips.append(ip)
+                        found = True
+                    elif isTimeExceeded(get):
+                        tex = True
+                        ipps.append(ip)
+                    get = self.get_pkt()
+                if not found:
+                    if tex:
+                        ips.append(ipps[0])
+                    else:
+                        ips.append(None)
+                    trus.append(False)
+
         return ips, trus
