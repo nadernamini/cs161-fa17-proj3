@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a1d7f1a-00e5-4e6b-b5f9-5ad893f6a522" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common.py" afterPath="$PROJECT_DIR$/common.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="216" column="33" lean-forward="true" selection-start-line="216" selection-start-column="33" selection-end-line="216" selection-end-column="33" />
+            <state relative-caret-position="387">
+              <caret line="241" column="48" lean-forward="true" selection-start-line="241" selection-start-column="48" selection-end-line="241" selection-end-column="48" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -236,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511649338779</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[Q3] Added sequence number update">
+      <created>1511672279245</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1511672279245</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -285,7 +293,8 @@
     <MESSAGE value="[Q2] added check for validity of ACK" />
     <MESSAGE value="[Q2] reformatted the code" />
     <MESSAGE value="[Q2] reformatted the traceroute.py; added a function for handshake" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q2] reformatted the traceroute.py; added a function for handshake" />
+    <MESSAGE value="[Q3] Added sequence number update" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] Added sequence number update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -687,6 +696,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/traceroute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/evade.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -703,18 +720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/traceroute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="216" column="33" lean-forward="true" selection-start-line="216" selection-start-column="33" selection-end-line="216" selection-end-column="33" />
+        <state relative-caret-position="387">
+          <caret line="241" column="48" lean-forward="true" selection-start-line="241" selection-start-column="48" selection-end-line="241" selection-end-column="48" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
