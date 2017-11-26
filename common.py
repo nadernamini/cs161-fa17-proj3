@@ -203,13 +203,13 @@ class PacketUtils:
             get = self.get_pkt()
         return "LIVE"
 
-    def hndsk(self, target):
+    def hndsk(self, target, timeout=5):
         port = random.randint(2000, 30000)
         # SYN sent
         pckt = self.send_pkt(flags="S", sport=port)
         s_seq = pckt[TCP].seq
         # SYN/ACK received?
-        get = self.get_pkt(timeout=5)
+        get = self.get_pkt(timeout=timeout)
         if not get or TCP not in get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             return "DEAD"
         d_seq = get[TCP].seq
@@ -231,7 +231,7 @@ class PacketUtils:
         ips, trus = [], []
         for i in range(hops):
             print(i)
-            rv = self.hndsk(target)
+            rv = self.hndsk(target, timeout=1)
             if rv == "DEAD":
                 print "deeeed"
                 trus.append(False)
