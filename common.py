@@ -26,6 +26,11 @@ maxhop = 25
 triggerfetch = "GET /search?q=Falun+Gong HTTP/1.1\r\nHost: www.google.com\r\n\r\n"
 
 
+# Get the size of a string in bytes
+def utf8len(s):
+    return len(s.encode('utf-8'))
+
+
 # A couple useful functions that take scapy packets
 def isRST(p):
     return (TCP in p) and (p[IP][TCP].flags & RST != 0)
@@ -233,7 +238,8 @@ class PacketUtils:
                 port, d_ack, d_seq = rv
                 c, found = 0, False
                 while c < 3 and not found:
-                    pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1, ttl=i)
+                    pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
+                                         seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
                     get = self.get_pkt()
                     while get and not found:
                         if isRST(get) or isTimeExceeded(get):
