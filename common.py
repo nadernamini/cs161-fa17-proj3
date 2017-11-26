@@ -134,7 +134,7 @@ class PacketUtils:
         return p
 
     # Has an automatic 5 second timeout.
-    def get_pkt(self, timeout=1):
+    def get_pkt(self, timeout=5):
         try:
             return self.packetQueue.get(True, timeout)
         except Queue.Empty:
@@ -209,7 +209,7 @@ class PacketUtils:
         pckt = self.send_pkt(flags="S", sport=port)
         s_seq = pckt[TCP].seq
         # SYN/ACK received?
-        get = self.get_pkt()
+        get = self.get_pkt(timeout=5)
         if not get or TCP not in get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             return "DEAD"
         d_seq = get[TCP].seq
@@ -242,7 +242,7 @@ class PacketUtils:
                     pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
                                          seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
                     c += 1
-                get = self.get_pkt()
+                get = self.get_pkt(timeout=2)
                 found, ip = False, None
                 while get and (not found or not ip):
                     cip = get[IP].src
@@ -250,7 +250,7 @@ class PacketUtils:
                         found = True
                     elif isTimeExceeded(get):
                         ip = cip
-                    get = self.get_pkt()
+                    get = self.get_pkt(timeout=2)
                 trus.append(found)
                 ips.append(ip)
 
