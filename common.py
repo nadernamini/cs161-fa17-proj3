@@ -186,10 +186,10 @@ class PacketUtils:
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
         """
         port, s_seq, d_seq = self.hndsk(target)
-        pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port, seq=s_seq + 1, ack=d_seq + 1)
+        pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port)
         get = self.get_pkt()
         while get:
-            if isRST(get):
+	    if isRST(get):
                 return "FIREWALL"
             get = self.get_pkt()
         return "LIVE"
