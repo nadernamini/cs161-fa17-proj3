@@ -219,12 +219,21 @@ class PacketUtils:
     # The second list is T/F 
     # if there is a RST back for that particular request
     def traceroute(self, target, hops):
+        ips, trus = [], []
         for i in range(hops):
             port, d_ack, d_seq = self.hndsk(target)
-            for _ in range(3):
-                pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1, ttl=i)
-                if isRST(pckt) or (isICMP(pckt) and isTimeExceeded(pckt)):
-                    if isRST(pckt):
-                        print "a"
-
-        return "NEED TO IMPLEMENT"
+            c, found = 0, False
+            while c < 3 and not found:
+                pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1, ttl=i)
+                get = self.get_pkt()
+                while get:
+                    if isRST(get) or isTimeExceeded(get):
+                        if isRST(get):
+                            trus.append(True)
+                        else:
+                            trus.append(False)
+                        ips.append(get[IP].dst)
+                        found = True
+                    get = self.get_pkt()
+                c += 1
+        return ips, trus
