@@ -248,7 +248,7 @@ class PacketUtils:
                     cip = get[IP].src
                     if isRST(get):
                         found = True
-                    elif isTimeExceeded(get):
+                    if isTimeExceeded(get):
                         ip = cip
                     get = self.get_pkt(timeout=2)
                 trus.append(found)
