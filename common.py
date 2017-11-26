@@ -12,7 +12,7 @@ import interfaces
 # TCP-Flags
 FIN = 0x01
 SYN = 0x02
-RST = 0x04
+RST = 0x4
 PSH = 0x08
 ACK = 0x10
 URG = 0x20
@@ -189,7 +189,7 @@ class PacketUtils:
         pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port)
         get = self.get_pkt()
         while get:
-	    if isRST(get):
+            if isRST(get):
                 return "FIREWALL"
             get = self.get_pkt()
         return "LIVE"
@@ -219,4 +219,12 @@ class PacketUtils:
     # The second list is T/F 
     # if there is a RST back for that particular request
     def traceroute(self, target, hops):
+        for i in range(hops):
+            port, d_ack, d_seq = self.hndsk(target)
+            for _ in range(3):
+                pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1, ttl=i)
+                if isRST(pckt) or (isICMP(pckt) and isTimeExceeded(pckt)):
+                    if isRST(pckt):
+                        print "a"
+
         return "NEED TO IMPLEMENT"
