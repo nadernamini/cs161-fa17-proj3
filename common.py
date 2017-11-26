@@ -241,13 +241,21 @@ class PacketUtils:
                     pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
                                          seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
                 get = self.get_pkt()
+                tex = False
+                ipps = []
                 while get and not found:
-                    if isRST(get) or isTimeExceeded(get):
-                        if isRST(get):
-                            trus.append(True)
-                        else:
-                            trus.append(False)
+                    if isRST(get):
                         ips.append(get[IP].src)
+                        trus.append(True)
                         found = True
+                    elif isTimeExceeded(get):
+                        tex = True
+                        ipps.append(get[IP].src)
                     get = self.get_pkt()
+                if not found:
+                    if tex:
+                        ips.append(ipps[0])
+                    else:
+                        ips.append(None)
+                    trus.append(False)
         return ips, trus
