@@ -235,13 +235,13 @@ class PacketUtils:
                 while c < 3 and not found:
                     pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1, ttl=i)
                     get = self.get_pkt()
-                    while get:
+                    while get and not found:
                         if isRST(get) or isTimeExceeded(get):
                             if isRST(get):
                                 trus.append(True)
                             else:
                                 trus.append(False)
-                            ips.append(get[IP].dst)
+                            ips.append(get[IP].src)
                             found = True
                         get = self.get_pkt()
                     c += 1
