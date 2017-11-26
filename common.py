@@ -233,6 +233,7 @@ class PacketUtils:
             print(i)
             rv = self.hndsk(target)
             if rv == "DEAD":
+                print "deeeed"
                 trus.append(False)
                 ips.append(None)
             else:
@@ -242,6 +243,7 @@ class PacketUtils:
                     pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
                                          seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
                     c += 1
+                print self.packetQueue.qsize(), "asd"
                 get = self.get_pkt(timeout=1)
                 found, ip = False, None
                 while get and (not found or not ip):
