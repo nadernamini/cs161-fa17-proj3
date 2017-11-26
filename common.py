@@ -242,24 +242,16 @@ class PacketUtils:
                     pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
                                          seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
                     c += 1
-                found = False
                 get = self.get_pkt()
-                tex, ipps = False, []
-                while get and not found:
-                    ip = get[IP].src
+                found, ip = False, None
+                while get and (not found or not ip):
+                    cip = get[IP].src
                     if isRST(get):
-                        trus.append(True)
-                        ips.append(ip)
                         found = True
                     elif isTimeExceeded(get):
-                        tex = True
-                        ipps.append(ip)
+                        ip = cip
                     get = self.get_pkt()
-                if not found:
-                    if tex:
-                        ips.append(ipps[0])
-                    else:
-                        ips.append(None)
-                    trus.append(False)
+                trus.append(found)
+                ips.append(ip)
 
         return ips, trus
