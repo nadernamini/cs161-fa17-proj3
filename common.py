@@ -236,26 +236,26 @@ class PacketUtils:
                 ips.append(None)
             else:
                 port, d_ack, d_seq = rv
-                found = False
-                for c in range(3):
+                c, found = 0, False
+                while c < 3 and not found:
                     pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
                                          seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
-                get = self.get_pkt()
-                tex = False
-                ipps = []
-                while get and not found:
-                    if isRST(get):
-                        ips.append(get[IP].src)
-                        trus.append(True)
-                        found = True
-                    elif isTimeExceeded(get):
-                        tex = True
-                        ipps.append(get[IP].src)
                     get = self.get_pkt()
-                if not found:
-                    if tex:
-                        ips.append(ipps[0])
-                    else:
-                        ips.append(None)
-                    trus.append(False)
+                    tex, ipps = False, []
+                    while get and not found:
+                        if isRST(get):
+                            trus.append(True)
+                            ips.append(get[IP].src)
+                            found = True
+                        elif isTimeExceeded(get):
+                            tex = True
+                            ipps.append(get[IP].src)
+                        get = self.get_pkt()
+                    if not found:
+                        if tex:
+                            ips.append(ipps[0])
+                        else:
+                            ips.append(None)
+                        trus.append(False)
+                    c += 1
         return ips, trus
