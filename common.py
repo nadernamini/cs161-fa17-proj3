@@ -134,7 +134,7 @@ class PacketUtils:
         return p
 
     # Has an automatic 5 second timeout.
-    def get_pkt(self, timeout=5):
+    def get_pkt(self, timeout=1):
         try:
             return self.packetQueue.get(True, timeout)
         except Queue.Empty:
@@ -195,7 +195,7 @@ class PacketUtils:
             return rv
         else:
             port, d_ack, d_seq = rv
-        pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack = d_seq + 1)
+        pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1)
         get = self.get_pkt()
         while get:
             if isRST(get):
