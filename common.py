@@ -185,7 +185,11 @@ class PacketUtils:
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
         """
-        port, d_ack, d_seq = self.hndsk(target)
+        rv = self.hndsk(target)
+        if rv == "DEAD":
+            return rv
+        else:
+            port, d_ack, d_seq = rv
         pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack = d_seq + 1)
         get = self.get_pkt()
         while get:
@@ -221,19 +225,24 @@ class PacketUtils:
     def traceroute(self, target, hops):
         ips, trus = [], []
         for i in range(hops):
-            port, d_ack, d_seq = self.hndsk(target)
-            c, found = 0, False
-            while c < 3 and not found:
-                pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1, ttl=i)
-                get = self.get_pkt()
-                while get:
-                    if isRST(get) or isTimeExceeded(get):
-                        if isRST(get):
-                            trus.append(True)
-                        else:
-                            trus.append(False)
-                        ips.append(get[IP].dst)
-                        found = True
+            rv = self.hndsk(target)
+            if rv == "DEAD":
+                trus.append(False)
+                ips.append(None)
+            else:
+                port, d_ack, d_seq = rv
+                c, found = 0, False
+                while c < 3 and not found:
+                    pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1, ttl=i)
                     get = self.get_pkt()
-                c += 1
+                    while get:
+                        if isRST(get) or isTimeExceeded(get):
+                            if isRST(get):
+                                trus.append(True)
+                            else:
+                                trus.append(False)
+                            ips.append(get[IP].dst)
+                            found = True
+                        get = self.get_pkt()
+                    c += 1
         return ips, trus
