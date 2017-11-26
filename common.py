@@ -185,8 +185,8 @@ class PacketUtils:
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
         """
-        port, s_seq, d_seq = self.hndsk(target)
-        pckt = self.send_pkt(flags="P", payload=triggerfetch, sport=port)
+        port, d_ack, d_seq = self.hndsk(target)
+        pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack = d_seq + 1)
         get = self.get_pkt()
         while get:
             if isRST(get):
@@ -210,7 +210,7 @@ class PacketUtils:
             return "DEAD"
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
-        return port, s_seq, d_seq
+        return port, d_ack, d_seq
 
     # Format is
     # ([], [])
