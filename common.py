@@ -253,6 +253,8 @@ class PacketUtils:
                     if isTimeExceeded(get):
                         ip = cip
                     get = self.get_pkt(timeout=1)
+                if self.packetQueue.qsize():
+                    self.packetQueue.empty()
                 print self.packetQueue.qsize(), "asd"
                 trus.append(found)
                 ips.append(ip)
