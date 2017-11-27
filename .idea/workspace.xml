@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="272" column="27" lean-forward="false" selection-start-line="272" selection-start-column="27" selection-end-line="272" selection-end-column="27" />
+            <state relative-caret-position="477">
+              <caret line="276" column="39" lean-forward="true" selection-start-line="276" selection-start-column="39" selection-end-line="276" selection-end-column="39" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -363,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511759187601</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="[Q3] fixed the typo">
+      <created>1511759220833</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1511759220833</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -402,7 +409,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q1] added check  for SYN/ACK" />
     <MESSAGE value="[Q1] added print statements to check behavior" />
     <MESSAGE value="[Q1] implemented def ping in common.py" />
     <MESSAGE value="[Q1] fixed the triggerfetch" />
@@ -427,7 +433,8 @@
     <MESSAGE value="[Q3] changed timeout to 1" />
     <MESSAGE value="[Q3] added print statements" />
     <MESSAGE value="[Q3] empty the queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] empty the queue" />
+    <MESSAGE value="[Q3] fixed the typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] fixed the typo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -855,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="272" column="27" lean-forward="false" selection-start-line="272" selection-start-column="27" selection-end-line="272" selection-end-column="27" />
+        <state relative-caret-position="477">
+          <caret line="276" column="39" lean-forward="true" selection-start-line="276" selection-start-column="39" selection-end-line="276" selection-end-column="39" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>

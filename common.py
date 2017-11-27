@@ -268,14 +268,14 @@ class PacketUtils:
                 c += 1
             get = self.get_pkt(timeout=1)
             print self.packetQueue.qsize(), "start"
-            found, ip = False, None
-            while get and (not found or not ip):
+            found, ip = False, []
+            while get:
                 print "in", isRST(get)
                 cip = get[IP].src
                 if isRST(get):
                     found = True
                 if isTimeExceeded(get):
-                    ip = cip
+                    ip.append(cip)
                 get = self.get_pkt(timeout=1)
             if not self.packetQueue.empty():
                 self.packetQueue.empty()
@@ -283,6 +283,6 @@ class PacketUtils:
                     self.packetQueue.queue.clear()
             print self.packetQueue.qsize(), "end"
             trus.append(found)
-            ips.append(ip)
+            ips.append(ip[0] if ip else None)
 
         return ips, trus
