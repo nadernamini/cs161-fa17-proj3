@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a1d7f1a-00e5-4e6b-b5f9-5ad893f6a522" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common.py" afterPath="$PROJECT_DIR$/common.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/msg.txt" afterPath="$PROJECT_DIR$/msg.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="msg.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="msg.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/msg.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="491">
@@ -73,9 +73,9 @@
         <option value="$PROJECT_DIR$/question1_sanity_check.py" />
         <option value="$PROJECT_DIR$/interfaces.py" />
         <option value="$PROJECT_DIR$/traceroute.py" />
-        <option value="$PROJECT_DIR$/msg.txt" />
         <option value="$PROJECT_DIR$/question4.txt" />
         <option value="$PROJECT_DIR$/common.py" />
+        <option value="$PROJECT_DIR$/msg.txt" />
       </list>
     </option>
   </component>
@@ -149,13 +149,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511592984867</updated>
-    </task>
-    <task id="LOCAL-00001" summary="[Add] added print statement for sent package">
-      <created>1511644371850</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1511644371850</updated>
     </task>
     <task id="LOCAL-00002" summary="[Q1] added check  for SYN/ACK">
       <created>1511644743406</created>
@@ -493,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511770649658</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="[Q4] changed how retrieving the payload from received packets">
+      <created>1511771319298</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1511771319309</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -532,7 +532,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] changed the isRST function" />
     <MESSAGE value="[Q3] added prints" />
     <MESSAGE value="[Q3] changed timeout to 1" />
     <MESSAGE value="[Q3] added print statements" />
@@ -557,7 +556,8 @@
     <MESSAGE value="[Q4] added mini-explanation to question4.txt" />
     <MESSAGE value="[Q4] changed flag to PA from A" />
     <MESSAGE value="[Q4] fixed the mistake that sent the triggerfetch everytime instead of msg[i]" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q4] fixed the mistake that sent the triggerfetch everytime instead of msg[i]" />
+    <MESSAGE value="[Q4] changed how retrieving the payload from received packets" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q4] changed how retrieving the payload from received packets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -976,14 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/msg.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
@@ -991,6 +983,14 @@
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msg.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
