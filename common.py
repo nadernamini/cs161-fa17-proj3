@@ -264,10 +264,10 @@ class PacketUtils:
             c = 0
             while c < 3:
                 pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
-                                     seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
+                                     seq=d_ack + c * utf8len(triggerfetch) + 1, ack=d_seq + 1, ttl=i)
                 c += 1
             print self.packetQueue.qsize(), "start"
-            get = self.get_pkt(timeout=1)
+            get = self.get_pkt(timeout=2)
             found, ip = False, None
             while get and (not found or not ip):
                 cip = get[IP].src
@@ -275,7 +275,7 @@ class PacketUtils:
                     found = True
                 if isTimeExceeded(get):
                     ip = cip
-                get = self.get_pkt(timeout=1)
+                get = self.get_pkt(timeout=2)
             if self.packetQueue.qsize():
                 self.packetQueue.empty()
             print self.packetQueue.qsize(), "end"
