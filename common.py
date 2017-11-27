@@ -275,7 +275,7 @@ class PacketUtils:
             print self.packetQueue.qsize(), "start"
             found, ip = False, []
             while get:
-                if get[TCP].sport == 80 and get[TCP].dport == port:
+                if TCP in get and get[TCP].sport == 80 and get[TCP].dport == port:
                     print "in", isRST(get)
                     cip = get[IP].src
                     if isRST(get):
