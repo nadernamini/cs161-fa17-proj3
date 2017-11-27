@@ -190,7 +190,7 @@ class PacketUtils:
         for i in range(len(msg)):
             print(i)
             ran_ch = random.choice(string.ascii_lowercase)
-            pckt = self.send_pkt(flags="PA", payload=triggerfetch,
+            pckt = self.send_pkt(flags="PA", payload=msg[i],
                                  sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 2)
             ran_pckt = self.send_pkt(flags="PA", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl - 2)
 

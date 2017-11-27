@@ -14,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="msg.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="msg.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/msg.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="199" column="17" lean-forward="true" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
+            <state relative-caret-position="318">
+              <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -479,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511769352573</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="[Q4] changed flag to PA from A">
+      <created>1511770339700</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1511770339700</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -518,7 +525,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] removed IP for non-reset deads" />
     <MESSAGE value="[Q3] removed the handshake function" />
     <MESSAGE value="[Q3] changed the isRST function" />
     <MESSAGE value="[Q3] added prints" />
@@ -543,7 +549,8 @@
     <MESSAGE value="[Q4] added more print statements" />
     <MESSAGE value="[Q4] now returning the payloads not the packets" />
     <MESSAGE value="[Q4] added mini-explanation to question4.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q4] added mini-explanation to question4.txt" />
+    <MESSAGE value="[Q4] changed flag to PA from A" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q4] changed flag to PA from A" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -962,21 +969,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="199" column="17" lean-forward="true" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/msg.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
