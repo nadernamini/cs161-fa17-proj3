@@ -270,7 +270,7 @@ class PacketUtils:
             print self.packetQueue.qsize(), "start"
             found, ip = False, None
             while get and (not found or not ip):
-                print "in", , isRST(get)
+                print "in", isRST(get)
                 cip = get[IP].src
                 if isRST(get):
                     found = True

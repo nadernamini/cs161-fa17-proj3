@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="269" column="51" lean-forward="false" selection-start-line="269" selection-start-column="51" selection-end-line="269" selection-end-column="51" />
+            <state relative-caret-position="513">
+              <caret line="272" column="27" lean-forward="false" selection-start-line="272" selection-start-column="27" selection-end-line="272" selection-end-column="27" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -356,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511758769301</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="[Q3] empty the queue">
+      <created>1511759187601</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1511759187601</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -395,7 +402,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Add] added print statement for sent package" />
     <MESSAGE value="[Q1] added check  for SYN/ACK" />
     <MESSAGE value="[Q1] added print statements to check behavior" />
     <MESSAGE value="[Q1] implemented def ping in common.py" />
@@ -420,7 +426,8 @@
     <MESSAGE value="[Q3] added prints" />
     <MESSAGE value="[Q3] changed timeout to 1" />
     <MESSAGE value="[Q3] added print statements" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] added print statements" />
+    <MESSAGE value="[Q3] empty the queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] empty the queue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -848,8 +855,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="269" column="51" lean-forward="false" selection-start-line="269" selection-start-column="51" selection-end-line="269" selection-end-column="51" />
+        <state relative-caret-position="513">
+          <caret line="272" column="27" lean-forward="false" selection-start-line="272" selection-start-column="27" selection-end-line="272" selection-end-column="27" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
