@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="266" column="24" lean-forward="false" selection-start-line="266" selection-start-column="24" selection-end-line="266" selection-end-column="24" />
+            <state relative-caret-position="575">
+              <caret line="277" column="44" lean-forward="false" selection-start-line="277" selection-start-column="44" selection-end-line="277" selection-end-column="44" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -335,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511756872332</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="[Q3] added prints">
+      <created>1511757151983</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1511757151983</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -397,7 +404,8 @@
     <MESSAGE value="[Q3] removed IP for non-reset deads" />
     <MESSAGE value="[Q3] removed the handshake function" />
     <MESSAGE value="[Q3] changed the isRST function" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] changed the isRST function" />
+    <MESSAGE value="[Q3] added prints" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] added prints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -825,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="266" column="24" lean-forward="false" selection-start-line="266" selection-start-column="24" selection-end-line="266" selection-end-column="24" />
+        <state relative-caret-position="575">
+          <caret line="277" column="44" lean-forward="false" selection-start-line="277" selection-start-column="44" selection-end-line="277" selection-end-column="44" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
