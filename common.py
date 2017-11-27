@@ -266,19 +266,21 @@ class PacketUtils:
                 pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
                                      seq=d_ack + c * utf8len(triggerfetch) + 1, ack=d_seq + 1, ttl=i)
                 c += 1
-            print self.packetQueue.qsize(), "start"
             get = self.get_pkt(timeout=1)
+            print self.packetQueue.qsize(), "start"
             found, ip = False, None
             while get and (not found or not ip):
-                print "in"
+                print "in", , isRST(get)
                 cip = get[IP].src
                 if isRST(get):
                     found = True
                 if isTimeExceeded(get):
                     ip = cip
                 get = self.get_pkt(timeout=1)
-            if self.packetQueue.qsize():
+            if not self.packetQueue.empty():
                 self.packetQueue.empty()
+                with self.packetQueue.mutex:
+                    self.packetQueue.queue.clear()
             print self.packetQueue.qsize(), "end"
             trus.append(found)
             ips.append(ip)
