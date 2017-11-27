@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="243" column="42" lean-forward="false" selection-start-line="243" selection-start-column="42" selection-end-line="243" selection-end-column="42" />
+            <state relative-caret-position="308">
+              <caret line="264" column="40" lean-forward="true" selection-start-line="264" selection-start-column="40" selection-end-line="264" selection-end-column="40" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -391,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511761497643</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="[Q3] using the same port for all the syns">
+      <created>1511761658496</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1511761658496</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -430,7 +437,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q2] changed how I check for live or firewalled server" />
     <MESSAGE value="[Q2] added get_pckt() in the while loop" />
     <MESSAGE value="[Q2] added check for validity of ACK" />
     <MESSAGE value="[Q2] reformatted the code" />
@@ -455,7 +461,8 @@
     <MESSAGE value="[Q3] go through all the packets" />
     <MESSAGE value="[Q3] removed additional constraint from isTimeExceeded and isRST" />
     <MESSAGE value="[Q3] pushing the last packet" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] pushing the last packet" />
+    <MESSAGE value="[Q3] using the same port for all the syns" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] using the same port for all the syns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -883,8 +890,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="243" column="42" lean-forward="false" selection-start-line="243" selection-start-column="42" selection-end-line="243" selection-end-column="42" />
+        <state relative-caret-position="308">
+          <caret line="264" column="40" lean-forward="true" selection-start-line="264" selection-start-column="40" selection-end-line="264" selection-end-column="40" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>

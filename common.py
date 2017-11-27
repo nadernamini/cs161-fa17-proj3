@@ -241,10 +241,10 @@ class PacketUtils:
     # if there is a RST back for that particular request
     def traceroute(self, target, hops):
         ips, trus = [], []
-        port = random.randint(2000, 30000)
+
         for i in range(1, hops):
             print(i)
-
+            port = random.randint(2000, 30000)
             # SYN sent
             pckt = self.send_pkt(flags="S", sport=port)
             s_seq = pckt[TCP].seq
@@ -266,9 +266,7 @@ class PacketUtils:
 
             c = 0
             while c < 3:
-                flg = "A"
-                if c == 2:
-                    flg = "PA"
+                flg = "PA"
                 pckt = self.send_pkt(flags=flg, payload=triggerfetch, sport=port,
                                      seq=d_ack + c * utf8len(triggerfetch) + 1, ack=d_seq + 1, ttl=i)
                 c += 1
