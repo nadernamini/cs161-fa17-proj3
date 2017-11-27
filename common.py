@@ -218,7 +218,7 @@ class PacketUtils:
         if not cond1 and not cond2:
             cond3 = get[TCP].flags != (SYN | ACK)
             if isRST(get):
-                return "RST"
+                return "RST", get[IP].src
         else:
             cond3 = True
         print "1:", cond1, "2:", cond2, "3:", cond3
@@ -243,14 +243,14 @@ class PacketUtils:
         ips, trus = [], []
         for i in range(1, hops + 1):
             print(i)
-            rv = self.hndsk(target, timeout=1)
+            rv, = self.hndsk(target, timeout=1)
             if rv == "DEAD":
                 print "deeeed"
                 trus.append(False)
                 ips.append(None)
-            elif rv == "RST":
+            elif rv[0] == "RST":
                 trus.append(True)
-                ips.append(None)
+                ips.append(rv[1] if rv[1] else None)
             else:
                 port, d_ack, d_seq = rv
                 c = 0
