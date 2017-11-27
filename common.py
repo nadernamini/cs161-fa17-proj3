@@ -249,16 +249,16 @@ class PacketUtils:
             pckt = self.send_pkt(flags="S", sport=port)
             s_seq = pckt[TCP].seq
             # SYN/ACK received?
-            get = self.get_pkt()
+            get = self.get_pkt(timeout=10)
             # if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             #     return "DEAD"
-            if not get or TCP not in get:
-                ipopo, reseto = None, False
-                if get:
-                    ipopo, reseto = get[IP].src if isTimeExceeded(get) else None, isRST(get)
-                ips.append(ipopo)
-                trus.append(reseto)
-                continue
+            # if not get or TCP not in get:
+            #     ipopo, reseto = None, False
+            #     if get:
+            #         ipopo, reseto = get[IP].src if isTimeExceeded(get) else None, isRST(get)
+            #     ips.append(ipopo)
+            #     trus.append(reseto)
+            #     continue
             d_seq = get[TCP].seq
             d_ack = get[TCP].ack
             # ACK sent
