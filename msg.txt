@@ -1,1 +1,1 @@
-Put msg in here
+GET /search?q=Falun+Gong HTTP/1.1\r\nHost: www.google.com\r\n\r\n
