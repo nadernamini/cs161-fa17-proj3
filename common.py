@@ -223,15 +223,12 @@ class PacketUtils:
             cond3 = True
         print "1:", cond1, "2:", cond2, "3:", cond3
         if cond1 or cond2 or cond3:  # check for syn/ack flag
-            if not cond1:
-                return "DEAD", get[IP].src
-            else:
-                return "DEAD", None
+            return "DEAD", None
         d_seq = get[TCP].seq
         d_ack = get[TCP].ack
         # check if ACK == Seq + 1
         if d_ack != s_seq + 1:
-            return "DEAD", get[IP].src
+            return "DEAD", None
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
         return (port, d_ack, d_seq), None
@@ -244,13 +241,13 @@ class PacketUtils:
     # if there is a RST back for that particular request
     def traceroute(self, target, hops):
         ips, trus = [], []
-        for i in range(hops):
+        for i in range(1, hops):
             print(i)
-            rv, ipp = self.hndsk(target, timeout=1)
+            rv, ipp = self.hndsk(target, timeout=5)
             if rv == "DEAD":
                 print "deeeed"
                 trus.append(False)
-                ips.append(ipp if ipp else None)
+                ips.append(None)
             elif rv == "RST":
                 trus.append(True)
                 ips.append(ipp if ipp else None)
