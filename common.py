@@ -214,11 +214,11 @@ class PacketUtils:
         if not cond1:
             cond2 = TCP not in get
         else:
-            cond2 = False
+            cond2 = True
         if not cond1 or not cond2:
             cond3 = get[TCP].flags != (SYN | ACK)
         else:
-            cond3 = False
+            cond3 = True
         print "1:", cond1, "2:", cond2, "3:", cond3
         if cond1 or cond2 or cond3:  # check for syn/ack flag
             return "DEAD"
