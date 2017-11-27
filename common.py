@@ -33,7 +33,7 @@ def utf8len(s):
 
 # A couple useful functions that take scapy packets
 def isRST(p):
-    return p and (TCP in p) and (p[IP][TCP].flags & RST != 0)
+    return (TCP in p) and (p[IP][TCP].flags & RST != 0)
 
 
 def isICMP(p):
@@ -41,7 +41,7 @@ def isICMP(p):
 
 
 def isTimeExceeded(p):
-    return p and ICMP in p and p[IP][ICMP].type == 11
+    return ICMP in p and p[IP][ICMP].type == 11
 
 
 # A general python object to handle a lot of this stuff...
@@ -251,10 +251,11 @@ class PacketUtils:
             # if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             #     return "DEAD"
             if not get or TCP not in get:
-                ips.append(None)
-                trus.append(isRST(get))
-                if get and IP in get:
-                    print get[IP].src
+                ipopo, reseto = None, False
+                if get:
+                    ipopo, reseto = get[IP].src if isTimeExceeded(get) else None, isRST(get)
+                ips.append(ipopo)
+                trus.append(reseto)
                 continue
             d_seq = get[TCP].seq
             d_ack = get[TCP].ack

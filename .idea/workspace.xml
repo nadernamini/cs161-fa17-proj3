@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="276" column="39" lean-forward="true" selection-start-line="276" selection-start-column="39" selection-end-line="276" selection-end-column="39" />
+            <state relative-caret-position="510">
+              <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -370,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511759220833</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="[Q3] go through all the packets">
+      <created>1511759508617</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1511759508617</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -409,7 +416,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q1] added print statements to check behavior" />
     <MESSAGE value="[Q1] implemented def ping in common.py" />
     <MESSAGE value="[Q1] fixed the triggerfetch" />
     <MESSAGE value="[Q2] changed how I check for live or firewalled server" />
@@ -434,7 +440,8 @@
     <MESSAGE value="[Q3] added print statements" />
     <MESSAGE value="[Q3] empty the queue" />
     <MESSAGE value="[Q3] fixed the typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] fixed the typo" />
+    <MESSAGE value="[Q3] go through all the packets" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] go through all the packets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -862,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="276" column="39" lean-forward="true" selection-start-line="276" selection-start-column="39" selection-end-line="276" selection-end-column="39" />
+        <state relative-caret-position="510">
+          <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
