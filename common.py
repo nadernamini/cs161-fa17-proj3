@@ -173,14 +173,14 @@ class PacketUtils:
     # "LIVE" if the server is alive,
     # "FIREWALL" if it is behind the Great Firewall
     def ping(self, target):
-        """
+
         port = random.randint(2000, 30000)
         # SYN sent
         pckt = self.send_pkt(flags="S", sport=port)
         s_seq = pckt[TCP].seq
         # SYN/ACK received?
         get = self.get_pkt()
-        if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
+        if not get or TCP not in get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             return "DEAD"
         d_seq = get[TCP].seq
         d_ack = get[TCP].ack
@@ -189,12 +189,12 @@ class PacketUtils:
             return "DEAD"
         # ACK sent
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
-        """
-        rv, = self.hndsk(target)
-        if rv == "DEAD":
-            return rv
-        else:
-            port, d_ack, d_seq = rv
+
+        # rv, = self.hndsk(target)
+        # if rv == "DEAD":
+        #     return rv
+        # else:
+        #     port, d_ack, d_seq = rv
         pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port, seq=d_ack, ack=d_seq + 1)
         get = self.get_pkt()
         while get:
@@ -242,36 +242,42 @@ class PacketUtils:
     def traceroute(self, target, hops):
         ips, trus = [], []
         for i in range(1, hops):
-            print(i)
-            rv, ipp = self.hndsk(target, timeout=5)
-            if rv == "DEAD":
-                print "deeeed"
-                trus.append(False)
+            port = random.randint(2000, 30000)
+            # SYN sent
+            pckt = self.send_pkt(flags="S", sport=port)
+            s_seq = pckt[TCP].seq
+            # SYN/ACK received?
+            get = self.get_pkt()
+            # if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
+            #     return "DEAD"
+            if not get or TCP not in get:
                 ips.append(None)
-            elif rv == "RST":
-                trus.append(True)
-                ips.append(ipp if ipp else None)
-            else:
-                port, d_ack, d_seq = rv
-                c = 0
-                while c < 3:
-                    pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
-                                         seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
-                    c += 1
-                print self.packetQueue.qsize(), "asd"
+                trus.append(False)
+                continue
+            d_seq = get[TCP].seq
+            d_ack = get[TCP].ack
+            # ACK sent
+            pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
+
+            c = 0
+            while c < 3:
+                pckt = self.send_pkt(flags="PA", payload=triggerfetch, sport=port,
+                                     seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
+                c += 1
+            print self.packetQueue.qsize(), "start"
+            get = self.get_pkt(timeout=1)
+            found, ip = False, None
+            while get and (not found or not ip):
+                cip = get[IP].src
+                if isRST(get):
+                    found = True
+                if isTimeExceeded(get):
+                    ip = cip
                 get = self.get_pkt(timeout=1)
-                found, ip = False, None
-                while get and (not found or not ip):
-                    cip = get[IP].src
-                    if isRST(get):
-                        found = True
-                    if isTimeExceeded(get):
-                        ip = cip
-                    get = self.get_pkt(timeout=1)
-                if self.packetQueue.qsize():
-                    self.packetQueue.empty()
-                print self.packetQueue.qsize(), "asd"
-                trus.append(found)
-                ips.append(ip)
+            if self.packetQueue.qsize():
+                self.packetQueue.empty()
+            print self.packetQueue.qsize(), "end"
+            trus.append(found)
+            ips.append(ip)
 
         return ips, trus
