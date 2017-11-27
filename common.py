@@ -215,7 +215,7 @@ class PacketUtils:
             cond2 = TCP not in get
         else:
             cond2 = True
-        if not cond1 or not cond2:
+        if not cond1 and not cond2:
             cond3 = get[TCP].flags != (SYN | ACK)
         else:
             cond3 = True
