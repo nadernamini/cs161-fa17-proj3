@@ -60,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="259" column="35" lean-forward="false" selection-start-line="259" selection-start-column="35" selection-end-line="259" selection-end-column="35" />
+              <caret line="259" column="43" lean-forward="false" selection-start-line="259" selection-start-column="43" selection-end-line="259" selection-end-column="43" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -405,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511762250918</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="[Q3] removed the check for None ack">
+      <created>1511762543484</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1511762543484</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -444,7 +451,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q2] added check for validity of ACK" />
     <MESSAGE value="[Q2] reformatted the code" />
     <MESSAGE value="[Q2] reformatted the traceroute.py; added a function for handshake" />
     <MESSAGE value="[Q3] Added sequence number update" />
@@ -469,7 +475,8 @@
     <MESSAGE value="[Q3] pushing the last packet" />
     <MESSAGE value="[Q3] using the same port for all the syns" />
     <MESSAGE value="[Q3] changed back the random port every hop and PA" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] changed back the random port every hop and PA" />
+    <MESSAGE value="[Q3] removed the check for None ack" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] removed the check for None ack" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -898,7 +905,7 @@
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="259" column="35" lean-forward="false" selection-start-line="259" selection-start-column="35" selection-end-line="259" selection-end-column="35" />
+          <caret line="259" column="43" lean-forward="false" selection-start-line="259" selection-start-column="43" selection-end-line="259" selection-end-column="43" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
