@@ -33,7 +33,7 @@ def utf8len(s):
 
 # A couple useful functions that take scapy packets
 def isRST(p):
-    return (TCP in p) and (p[IP][TCP].flags & RST != 0)
+    return p and (TCP in p) and (p[IP][TCP].flags & RST != 0)
 
 
 def isICMP(p):
@@ -252,7 +252,7 @@ class PacketUtils:
             #     return "DEAD"
             if not get or TCP not in get:
                 ips.append(None)
-                trus.append(False)
+                trus.append(isRST(get))
                 continue
             d_seq = get[TCP].seq
             d_ack = get[TCP].ack
