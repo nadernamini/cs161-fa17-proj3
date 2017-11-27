@@ -199,8 +199,8 @@ class PacketUtils:
         rp = self.get_pkt(max(0, timeout - time.time()))
         while rp:
             rv.append(rp)
-            print rp
             rp = self.get_pkt(max(0, timeout - time.time()))
+        print len(rv)
         return rv
 
 

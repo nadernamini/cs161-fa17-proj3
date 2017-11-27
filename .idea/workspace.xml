@@ -47,8 +47,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="190" column="20" lean-forward="true" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
+            <state relative-caret-position="441">
+              <caret line="197" column="15" lean-forward="true" selection-start-line="197" selection-start-column="15" selection-end-line="197" selection-end-column="15" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -450,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511768336928</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="[Q4] added print statements">
+      <created>1511768792247</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1511768792247</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -489,7 +496,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] added new RST packet recognition" />
     <MESSAGE value="[Q3] start the hops at 1" />
     <MESSAGE value="[Q3] fixed how I obtain return value in traceroute" />
     <MESSAGE value="[Q3] added IP for non-reset deads" />
@@ -514,7 +520,8 @@
     <MESSAGE value="[Q3] fixed short-circuiting in the checks for validity of packet" />
     <MESSAGE value="[Q4] added trigger message to msg.txt" />
     <MESSAGE value="[Q4] implemented initial evade func" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q4] implemented initial evade func" />
+    <MESSAGE value="[Q4] added print statements" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q4] added print statements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -942,8 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="190" column="20" lean-forward="true" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
+        <state relative-caret-position="441">
+          <caret line="197" column="15" lean-forward="true" selection-start-line="197" selection-start-column="15" selection-end-line="197" selection-end-column="15" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
