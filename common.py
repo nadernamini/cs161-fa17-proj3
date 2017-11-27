@@ -241,7 +241,7 @@ class PacketUtils:
     # if there is a RST back for that particular request
     def traceroute(self, target, hops):
         ips, trus = [], []
-        for i in range(hops):
+        for i in range(1, hops + 1):
             print(i)
             rv = self.hndsk(target, timeout=1)
             if rv == "DEAD":
