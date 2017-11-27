@@ -47,8 +47,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
+            <state relative-caret-position="491">
+              <caret line="201" column="41" lean-forward="true" selection-start-line="201" selection-start-column="41" selection-end-line="201" selection-end-column="41" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -486,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511770339700</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="[Q4] fixed the mistake that sent the triggerfetch everytime instead of msg[i]">
+      <created>1511770649658</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1511770649658</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -525,7 +532,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] removed the handshake function" />
     <MESSAGE value="[Q3] changed the isRST function" />
     <MESSAGE value="[Q3] added prints" />
     <MESSAGE value="[Q3] changed timeout to 1" />
@@ -550,7 +556,8 @@
     <MESSAGE value="[Q4] now returning the payloads not the packets" />
     <MESSAGE value="[Q4] added mini-explanation to question4.txt" />
     <MESSAGE value="[Q4] changed flag to PA from A" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q4] changed flag to PA from A" />
+    <MESSAGE value="[Q4] fixed the mistake that sent the triggerfetch everytime instead of msg[i]" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q4] fixed the mistake that sent the triggerfetch everytime instead of msg[i]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -979,8 +986,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
+        <state relative-caret-position="491">
+          <caret line="201" column="41" lean-forward="true" selection-start-line="201" selection-start-column="41" selection-end-line="201" selection-end-column="41" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
