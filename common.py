@@ -6,6 +6,8 @@ from scapy.all import *
 import sys
 import socket
 import json
+import random
+import string
 import Queue
 import interfaces
 
@@ -165,9 +167,41 @@ class PacketUtils:
     # interference by the Great Firewall.
     #
     # ttl is a ttl which triggers the Great Firewall but is before the
-    # server itself (from a previous traceroute incantation
+    # server itself (from a previous traceroute incantation)
     def evade(self, target, msg, ttl):
-        return "NEED TO IMPLEMENT"
+        # Handshake #
+
+        port = random.randint(2000, 30000)
+        # SYN sent
+        pckt = self.send_pkt(flags="S", sport=port)
+        s_seq = pckt[TCP].seq
+        # SYN/ACK received?
+        get = self.get_pkt()
+        if not get or TCP not in get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
+            return "DEAD"
+        d_seq = get[TCP].seq
+        d_ack = get[TCP].ack
+        # check if ACK == Seq + 1
+        if d_ack != s_seq + 1:
+            return "DEAD"
+        # ACK sent
+        pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
+
+        for i in range(len(msg)):
+            ran_ch = random.choice(string.ascii_lowercase)
+            pckt = self.send_pkt(flags="A" if i != len(msg) - 1 else "PA", payload=triggerfetch,
+                                 sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 2)
+            ran_pckt = self.send_pkt(flags="A", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl - 2)
+
+        timeout = time.time() + 5
+        rv = []
+        rp = self.get_pkt(max(0, timeout - time.time()))
+        while rp:
+            rv.append(rp)
+            rp = self.get_pkt(max(0, timeout - time.time()))
+        return rv
+
+
 
     # Returns "DEAD" if server isn't alive,
     # "LIVE" if the server is alive,
