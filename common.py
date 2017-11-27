@@ -270,6 +270,7 @@ class PacketUtils:
             get = self.get_pkt(timeout=1)
             found, ip = False, None
             while get and (not found or not ip):
+                print "in"
                 cip = get[IP].src
                 if isRST(get):
                     found = True

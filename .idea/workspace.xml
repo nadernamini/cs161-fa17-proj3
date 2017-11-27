@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="277" column="44" lean-forward="false" selection-start-line="277" selection-start-column="44" selection-end-line="277" selection-end-column="44" />
+            <state relative-caret-position="372">
+              <caret line="272" column="25" lean-forward="false" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -342,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511757151983</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="[Q3] changed timeout to 1">
+      <created>1511758629010</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1511758629010</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -392,7 +399,6 @@
     <MESSAGE value="[Q2] reformatted the code" />
     <MESSAGE value="[Q2] reformatted the traceroute.py; added a function for handshake" />
     <MESSAGE value="[Q3] Added sequence number update" />
-    <MESSAGE value="[Q3] changed timeout to 1" />
     <MESSAGE value="[Q3] added print for conditions" />
     <MESSAGE value="[Q3] fixed the condition assignments" />
     <MESSAGE value="[Q3] now fixed the condition assignments" />
@@ -405,7 +411,8 @@
     <MESSAGE value="[Q3] removed the handshake function" />
     <MESSAGE value="[Q3] changed the isRST function" />
     <MESSAGE value="[Q3] added prints" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] added prints" />
+    <MESSAGE value="[Q3] changed timeout to 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] changed timeout to 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -833,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="277" column="44" lean-forward="false" selection-start-line="277" selection-start-column="44" selection-end-line="277" selection-end-column="44" />
+        <state relative-caret-position="372">
+          <caret line="272" column="25" lean-forward="false" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
