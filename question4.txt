@@ -1,2 +1,5 @@
 Describe (in 2-3 paragraphs) your evasion strategy:
+I send the payload one character at a time on a packet with a TTL of 2 longer than what it takes to reach the server.
+Along with each character, I send a random character with a TTL of 2 shorter to throw off the firewall into thinking
+that the, indeed, server indeed received that character. With each character, I also increment the sequence number.
 
