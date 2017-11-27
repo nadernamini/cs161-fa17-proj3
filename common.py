@@ -190,9 +190,9 @@ class PacketUtils:
         for i in range(len(msg)):
             print(i)
             ran_ch = random.choice(string.ascii_lowercase)
-            pckt = self.send_pkt(flags="A" if i != len(msg) - 1 else "PA", payload=triggerfetch,
+            pckt = self.send_pkt(flags="PA", payload=triggerfetch,
                                  sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 2)
-            ran_pckt = self.send_pkt(flags="A", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl - 2)
+            ran_pckt = self.send_pkt(flags="PA", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl - 2)
 
         timeout = time.time() + 5
         rv = []
