@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="277" column="34" lean-forward="false" selection-start-line="277" selection-start-column="34" selection-end-line="277" selection-end-column="34" />
+            <state relative-caret-position="507">
+              <caret line="277" column="96" lean-forward="false" selection-start-line="277" selection-start-column="96" selection-end-line="277" selection-end-column="96" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -433,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511763233010</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="[Q3] added more checks for validity of packet">
+      <created>1511763350119</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1511763350119</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -472,7 +479,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] added print for conditions" />
     <MESSAGE value="[Q3] fixed the condition assignments" />
     <MESSAGE value="[Q3] now fixed the condition assignments" />
     <MESSAGE value="[Q3] NOW fixed the condition assignments" />
@@ -497,7 +503,8 @@
     <MESSAGE value="[Q3] added a loop for ack" />
     <MESSAGE value="[Q3] removed the loop for ACK, added a 32 second timeout" />
     <MESSAGE value="[Q3] check for validity of packet" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] check for validity of packet" />
+    <MESSAGE value="[Q3] added more checks for validity of packet" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] added more checks for validity of packet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -925,8 +932,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="277" column="34" lean-forward="false" selection-start-line="277" selection-start-column="34" selection-end-line="277" selection-end-column="34" />
+        <state relative-caret-position="507">
+          <caret line="277" column="96" lean-forward="false" selection-start-line="277" selection-start-column="96" selection-end-line="277" selection-end-column="96" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
