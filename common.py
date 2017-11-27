@@ -217,6 +217,8 @@ class PacketUtils:
             cond2 = True
         if not cond1 and not cond2:
             cond3 = get[TCP].flags != (SYN | ACK)
+            if isRST(get):
+                return "RST"
         else:
             cond3 = True
         print "1:", cond1, "2:", cond2, "3:", cond3
@@ -245,6 +247,9 @@ class PacketUtils:
             if rv == "DEAD":
                 print "deeeed"
                 trus.append(False)
+                ips.append(None)
+            elif rv == "RST":
+                trus.append(True)
                 ips.append(None)
             else:
                 port, d_ack, d_seq = rv

@@ -59,8 +59,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="225" column="25" lean-forward="false" selection-start-line="225" selection-start-column="25" selection-end-line="225" selection-end-column="25" />
+            <state relative-caret-position="458">
+              <caret line="238" column="21" lean-forward="true" selection-start-line="238" selection-start-column="21" selection-end-line="238" selection-end-column="21" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -272,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511753357230</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[Q3] NOW fixed the condition assignments">
+      <created>1511753418419</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1511753418419</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -326,7 +333,8 @@
     <MESSAGE value="[Q3] added print for conditions" />
     <MESSAGE value="[Q3] fixed the condition assignments" />
     <MESSAGE value="[Q3] now fixed the condition assignments" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] now fixed the condition assignments" />
+    <MESSAGE value="[Q3] NOW fixed the condition assignments" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] NOW fixed the condition assignments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -754,8 +762,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="225" column="25" lean-forward="false" selection-start-line="225" selection-start-column="25" selection-end-line="225" selection-end-column="25" />
+        <state relative-caret-position="458">
+          <caret line="238" column="21" lean-forward="true" selection-start-line="238" selection-start-column="21" selection-end-line="238" selection-end-column="21" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
