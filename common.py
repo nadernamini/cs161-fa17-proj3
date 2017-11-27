@@ -198,7 +198,8 @@ class PacketUtils:
         rv = []
         rp = self.get_pkt(max(0, timeout - time.time()))
         while rp:
-            rv.append(rp)
+            if TCP in rp:
+                rv.append(rp[TCP].payload)
             rp = self.get_pkt(max(0, timeout - time.time()))
         print len(rv)
         return rv
