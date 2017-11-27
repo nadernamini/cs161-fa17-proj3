@@ -41,7 +41,7 @@ def isICMP(p):
 
 
 def isTimeExceeded(p):
-    return ICMP in p and p[IP][ICMP].type == 11
+    return p and ICMP in p and p[IP][ICMP].type == 11
 
 
 # A general python object to handle a lot of this stuff...
@@ -253,6 +253,8 @@ class PacketUtils:
             if not get or TCP not in get:
                 ips.append(None)
                 trus.append(isRST(get))
+                if get and IP in get:
+                    print get[IP].src
                 continue
             d_seq = get[TCP].seq
             d_ack = get[TCP].ack
