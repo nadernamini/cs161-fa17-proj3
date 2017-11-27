@@ -243,7 +243,7 @@ class PacketUtils:
         ips, trus = [], []
         for i in range(1, hops + 1):
             print(i)
-            rv, = self.hndsk(target, timeout=1)
+            rv = self.hndsk(target, timeout=1)
             if rv == "DEAD":
                 print "deeeed"
                 trus.append(False)
