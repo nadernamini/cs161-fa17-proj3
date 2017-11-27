@@ -24,6 +24,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="traceroute.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/traceroute.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="evade.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/evade.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -37,8 +47,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="160" column="26" lean-forward="true" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
+            <state relative-caret-position="336">
+              <caret line="190" column="20" lean-forward="true" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -433,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511765244002</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="[Q4] implemented initial evade func">
+      <created>1511768336928</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1511768336928</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -472,7 +489,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] NOW fixed the condition assignments" />
     <MESSAGE value="[Q3] added new RST packet recognition" />
     <MESSAGE value="[Q3] start the hops at 1" />
     <MESSAGE value="[Q3] fixed how I obtain return value in traceroute" />
@@ -497,7 +513,8 @@
     <MESSAGE value="[Q3] added more checks for validity of packet" />
     <MESSAGE value="[Q3] fixed short-circuiting in the checks for validity of packet" />
     <MESSAGE value="[Q4] added trigger message to msg.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q4] added trigger message to msg.txt" />
+    <MESSAGE value="[Q4] implemented initial evade func" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q4] implemented initial evade func" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -891,14 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/traceroute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/msg.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -915,6 +924,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/traceroute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/evade.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -925,8 +942,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="160" column="26" lean-forward="true" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
+        <state relative-caret-position="336">
+          <caret line="190" column="20" lean-forward="true" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>

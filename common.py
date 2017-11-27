@@ -188,6 +188,7 @@ class PacketUtils:
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
 
         for i in range(len(msg)):
+            print(i)
             ran_ch = random.choice(string.ascii_lowercase)
             pckt = self.send_pkt(flags="A" if i != len(msg) - 1 else "PA", payload=triggerfetch,
                                  sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 2)
@@ -198,6 +199,7 @@ class PacketUtils:
         rp = self.get_pkt(max(0, timeout - time.time()))
         while rp:
             rv.append(rp)
+            print rp
             rp = self.get_pkt(max(0, timeout - time.time()))
         return rv
 
