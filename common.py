@@ -211,8 +211,14 @@ class PacketUtils:
         # SYN/ACK received?
         get = self.get_pkt(timeout=timeout)
         cond1 = not get
-        cond2 = TCP not in get
-        cond3 = get[TCP].flags != (SYN | ACK)
+        if not cond1:
+            cond2 = TCP not in get
+        else:
+            cond2 = False
+        if not cond1 or not cond2:
+            cond3 = get[TCP].flags != (SYN | ACK)
+        else:
+            cond3 = False
         print "1:", cond1, "2:", cond2, "3:", cond3
         if cond1 or cond2 or cond3:  # check for syn/ack flag
             return "DEAD"
