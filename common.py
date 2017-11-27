@@ -201,7 +201,7 @@ class PacketUtils:
             if 'Raw' in rp:
                 rv.append(rp['Raw'].load)
             rp = self.get_pkt(max(0, timeout - time.time()))
-        print ''.join(lst)
+        print ''.join(rv)
         return rv
 
 
