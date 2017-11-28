@@ -204,8 +204,6 @@ class PacketUtils:
         print ''.join(rv)
         return rv
 
-
-
     # Returns "DEAD" if server isn't alive,
     # "LIVE" if the server is alive,
     # "FIREWALL" if it is behind the Great Firewall
