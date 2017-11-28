@@ -281,10 +281,12 @@ class PacketUtils:
             print(i)
             port = random.randint(2000, 30000)
             # SYN sent
-            pckt = self.send_pkt(flags="S", sport=port)
-            s_seq = pckt[TCP].seq
-            # SYN/ACK received?
-            get = self.get_pkt(timeout=32)
+            get = None
+            while not get:
+                pckt = self.send_pkt(flags="S", sport=port)
+                s_seq = pckt[TCP].seq
+                # SYN/ACK received?
+                get = self.get_pkt()
 
             # if not get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             #     return "DEAD"
