@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a1d7f1a-00e5-4e6b-b5f9-5ad893f6a522" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common.py" afterPath="$PROJECT_DIR$/common.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feedback.txt" afterPath="$PROJECT_DIR$/feedback.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,14 +44,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="288" column="36" lean-forward="true" selection-start-line="288" selection-start-column="36" selection-end-line="288" selection-end-column="36" />
+            <state relative-caret-position="293">
+              <caret line="295" column="48" lean-forward="true" selection-start-line="295" selection-start-column="48" selection-end-line="295" selection-end-column="48" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feedback.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/feedback.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +96,7 @@
         <option value="$PROJECT_DIR$/traceroute.py" />
         <option value="$PROJECT_DIR$/question4.txt" />
         <option value="$PROJECT_DIR$/common.py" />
+        <option value="$PROJECT_DIR$/feedback.txt" />
       </list>
     </option>
   </component>
@@ -159,13 +170,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511592984867</updated>
-    </task>
-    <task id="LOCAL-00008" summary="[Q2] added get_pckt() in the while loop">
-      <created>1511647149356</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1511647149356</updated>
     </task>
     <task id="LOCAL-00009" summary="[Q2] added check for validity of ACK">
       <created>1511647607812</created>
@@ -503,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511842778833</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="[Q3] added a while loop for syn/ack">
+      <created>1511843656778</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1511843656778</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -542,7 +553,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] removed additional constraint from isTimeExceeded and isRST" />
     <MESSAGE value="[Q3] pushing the last packet" />
     <MESSAGE value="[Q3] using the same port for all the syns" />
     <MESSAGE value="[Q3] changed back the random port every hop and PA" />
@@ -567,21 +577,14 @@
     <MESSAGE value="[Q4] fixed the usage of ttl" />
     <MESSAGE value="[Q4] added full explanation of the evasion strategy" />
     <MESSAGE value="[Q3] added check for seen IPs" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q3] added check for seen IPs" />
+    <MESSAGE value="[Q3] added a while loop for syn/ack" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q3] added a while loop for syn/ack" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/traceroute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/evade.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1001,11 +1004,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="288" column="36" lean-forward="true" selection-start-line="288" selection-start-column="36" selection-end-line="288" selection-end-column="36" />
+        <state relative-caret-position="293">
+          <caret line="295" column="48" lean-forward="true" selection-start-line="295" selection-start-column="48" selection-end-line="295" selection-end-column="48" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feedback.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
