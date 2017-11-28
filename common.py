@@ -283,7 +283,8 @@ class PacketUtils:
             # SYN sent
             get = None
             while not get:
-                pckt = self.send_pkt(flags="S", sport=port)
+                port = random.randint(2000, 30000)
+		pckt = self.send_pkt(flags="S", sport=port)
                 s_seq = pckt[TCP].seq
                 # SYN/ACK received?
                 get = self.get_pkt()
