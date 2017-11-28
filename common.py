@@ -188,7 +188,7 @@ class PacketUtils:
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
 
         for i in range(len(msg)):
-#            print(i, msg[i])
+            # print(i, msg[i])
             # ran_ch = random.choice(string.ascii_lowercase)
             pckt = self.send_pkt(flags="PA", payload=msg[i],
                                  sport=port, seq=d_ack + i, ack=d_seq + 1)
@@ -201,7 +201,7 @@ class PacketUtils:
             if 'Raw' in rp and not isTimeExceeded(rp):
                 rv.append(rp['Raw'].load)
             rp = self.get_pkt(max(0, timeout - time.time()))
-#        print ''.join(rv)
+        # print ''.join(rv)
         return rv
 
     # Returns "DEAD" if server isn't alive,
@@ -256,7 +256,7 @@ class PacketUtils:
                 return "RST", get[IP].src
         else:
             cond3 = True
-#        print "1:", cond1, "2:", cond2, "3:", cond3
+        # print "1:", cond1, "2:", cond2, "3:", cond3
         if cond1 or cond2 or cond3:  # check for syn/ack flag
             return "DEAD", None
         d_seq = get[TCP].seq
@@ -312,11 +312,11 @@ class PacketUtils:
                                      seq=d_ack + c * utf8len(triggerfetch), ack=d_seq + 1, ttl=i)
                 c += 1
             get = self.get_pkt(timeout=1)
-#            print self.packetQueue.qsize(), "start"
+            # print self.packetQueue.qsize(), "start"
             found, ip = False, []
             while get:
                 if IP in get or (TCP in get and get[TCP].sport == 80 and get[TCP].dport == port):
-#                    print "in", isRST(get)
+                    # print "in", isRST(get)
                     cip = get[IP].src
                     if isRST(get):
                         found = True
@@ -324,7 +324,7 @@ class PacketUtils:
                         ip.append(cip)
                 get = self.get_pkt(timeout=1)
             self.packetQueue = Queue.Queue(100000)
-#            print self.packetQueue.qsize(), "end"
+            # print self.packetQueue.qsize(), "end"
             trus.append(found)
             if ip:
                 ips.append(ip[0])

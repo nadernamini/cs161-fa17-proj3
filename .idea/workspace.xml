@@ -37,8 +37,8 @@
       <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
+            <state relative-caret-position="-558">
+              <caret line="259" column="8" lean-forward="false" selection-start-line="259" selection-start-column="8" selection-end-line="259" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -138,13 +138,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511592984867</updated>
-    </task>
-    <task id="LOCAL-00013" summary="[Q3] changed timeout to 1">
-      <created>1511675492709</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1511675492709</updated>
     </task>
     <task id="LOCAL-00014" summary="[Q3] added print for conditions">
       <created>1511752975754</created>
@@ -482,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511855710148</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="[Q4] added more conditions">
+      <created>1511855797218</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1511855797218</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -521,7 +521,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] added a loop for ack" />
     <MESSAGE value="[Q3] removed the loop for ACK, added a 32 second timeout" />
     <MESSAGE value="[Q3] check for validity of packet" />
     <MESSAGE value="[Q3] added more checks for validity of packet" />
@@ -546,7 +545,8 @@
     <MESSAGE value="[Q4] added initialization for the variables within the while loop" />
     <MESSAGE value="[Q4] filtering out ICMP packets" />
     <MESSAGE value="[Q4] added conditions" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q4] added conditions" />
+    <MESSAGE value="[Q4] added more conditions" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q4] added more conditions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -958,8 +958,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
+        <state relative-caret-position="-558">
+          <caret line="259" column="8" lean-forward="false" selection-start-line="259" selection-start-column="8" selection-end-line="259" selection-end-column="8" />
           <folding />
         </state>
       </provider>
