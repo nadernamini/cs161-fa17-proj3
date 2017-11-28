@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a1d7f1a-00e5-4e6b-b5f9-5ad893f6a522" name="Default" comment="">
+    <list default="true" id="7a1d7f1a-00e5-4e6b-b5f9-5ad893f6a522" name="Default" comment="[Q4] added full explanation of the evasion strategy">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common.py" afterPath="$PROJECT_DIR$/common.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question4.txt" afterPath="$PROJECT_DIR$/question4.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1029">
-              <caret line="209" column="27" lean-forward="true" selection-start-line="209" selection-start-column="27" selection-end-line="209" selection-end-column="27" />
+            <state relative-caret-position="582">
+              <caret line="327" column="32" lean-forward="false" selection-start-line="327" selection-start-column="32" selection-end-line="327" selection-end-column="32" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -57,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="question4.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="question4.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/question4.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -85,8 +84,8 @@
         <option value="$PROJECT_DIR$/interfaces.py" />
         <option value="$PROJECT_DIR$/msg.txt" />
         <option value="$PROJECT_DIR$/traceroute.py" />
-        <option value="$PROJECT_DIR$/common.py" />
         <option value="$PROJECT_DIR$/question4.txt" />
+        <option value="$PROJECT_DIR$/common.py" />
       </list>
     </option>
   </component>
@@ -160,13 +159,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511592984867</updated>
-    </task>
-    <task id="LOCAL-00006" summary="[Q1] fixed the triggerfetch">
-      <created>1511646482529</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1511646482529</updated>
     </task>
     <task id="LOCAL-00007" summary="[Q2] changed how I check for live or firewalled server">
       <created>1511647072523</created>
@@ -504,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511835628459</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="[Q4] added full explanation of the evasion strategy">
+      <created>1511842521297</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1511842521298</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -543,7 +542,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[Q3] fixed the typo" />
     <MESSAGE value="[Q3] go through all the packets" />
     <MESSAGE value="[Q3] removed additional constraint from isTimeExceeded and isRST" />
     <MESSAGE value="[Q3] pushing the last packet" />
@@ -568,7 +566,8 @@
     <MESSAGE value="[Q4] added a print for payload" />
     <MESSAGE value="[Q4] fixed the typo in the added print" />
     <MESSAGE value="[Q4] fixed the usage of ttl" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Q4] fixed the usage of ttl" />
+    <MESSAGE value="[Q4] added full explanation of the evasion strategy" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Q4] added full explanation of the evasion strategy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -992,21 +991,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1029">
-          <caret line="209" column="27" lean-forward="true" selection-start-line="209" selection-start-column="27" selection-end-line="209" selection-end-column="27" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/question4.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="96" lean-forward="false" selection-start-line="16" selection-start-column="96" selection-end-line="16" selection-end-column="96" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="327" column="32" lean-forward="false" selection-start-line="327" selection-start-column="32" selection-end-line="327" selection-end-column="32" />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

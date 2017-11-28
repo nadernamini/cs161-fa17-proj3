@@ -276,7 +276,7 @@ class PacketUtils:
     # if there is a RST back for that particular request
     def traceroute(self, target, hops):
         ips, trus = [], []
-
+        seen = set()
         for i in range(1, hops):
             print(i)
             port = random.randint(2000, 30000)
@@ -315,12 +315,15 @@ class PacketUtils:
                     cip = get[IP].src
                     if isRST(get):
                         found = True
-                    if isTimeExceeded(get):
+                    if isTimeExceeded(get) and cip not in seen:
                         ip.append(cip)
                 get = self.get_pkt(timeout=1)
             self.packetQueue = Queue.Queue(100000)
             print self.packetQueue.qsize(), "end"
             trus.append(found)
-            ips.append(ip[0] if ip else None)
-
+            if ip:
+                ips.append(ip[0])
+                seen.add(ip[0])
+            else:
+                ips.append(None)
         return ips, trus
