@@ -188,9 +188,9 @@ class PacketUtils:
         pckt = self.send_pkt(flags="A", sport=port, seq=s_seq + 1, ack=d_seq + 1)
 
         for i in range(len(msg)):
-            print(i, msg[i].replace('\n', '\r\n'))
+            print(i, msg[i])
             ran_ch = random.choice(string.ascii_lowercase)
-            pckt = self.send_pkt(flags="PA", payload=msg[i].replace('\n', '\r\n'),
+            pckt = self.send_pkt(flags="PA", payload=msg[i],
                                  sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 2)
             ran_pckt = self.send_pkt(flags="PA", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl - 2)
 
