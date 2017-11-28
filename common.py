@@ -320,10 +320,7 @@ class PacketUtils:
                     if isTimeExceeded(get):
                         ip.append(cip)
                 get = self.get_pkt(timeout=1)
-            if not self.packetQueue.empty():
-                self.packetQueue.empty()
-                with self.packetQueue.mutex:
-                    self.packetQueue.queue.clear()
+            self.packetQueue = Queue.Queue(100000)
             print self.packetQueue.qsize(), "end"
             trus.append(found)
             ips.append(ip[0] if ip else None)
