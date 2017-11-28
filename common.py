@@ -6,8 +6,8 @@ from scapy.all import *
 import sys
 import socket
 import json
-import random
-import string
+# import random
+# import string
 import Queue
 import interfaces
 
@@ -192,10 +192,10 @@ class PacketUtils:
 
         for i in range(len(msg)):
             print(i, msg[i])
-            ran_ch = random.choice(string.ascii_lowercase)
+            # ran_ch = random.choice(string.ascii_lowercase)
             pckt = self.send_pkt(flags="PA", payload=msg[i],
                                  sport=port, seq=d_ack + i, ack=d_seq + 1)
-            ran_pckt = self.send_pkt(flags="PA", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 1)
+            ran_pckt = self.send_pkt(flags="PA", payload=msg[i], sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 1)
 
         timeout = time.time() + 5
         rv = []
