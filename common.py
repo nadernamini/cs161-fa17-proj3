@@ -279,12 +279,12 @@ class PacketUtils:
         seen = set()
         for i in range(1, hops):
             print(i)
-            port = random.randint(2000, 30000)
+            port, s_seq = 0, 0
             # SYN sent
             get = None
             while not get:
                 port = random.randint(2000, 30000)
-		pckt = self.send_pkt(flags="S", sport=port)
+                pckt = self.send_pkt(flags="S", sport=port)
                 s_seq = pckt[TCP].seq
                 # SYN/ACK received?
                 get = self.get_pkt()
