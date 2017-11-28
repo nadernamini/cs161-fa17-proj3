@@ -1,18 +1,6 @@
 Describe (in 2-3 paragraphs) your evasion strategy:
 
-My evasion strategy is very similar to what was discussed in lecture. I have two payloads of the same size. One
-triggers the firewall and the other is a randomly generated string of lowercase letters. Initially, I do the normal
-handshake with the server. After the ACK, I start sending both of the payloads one character at a time. The only
-difference between the two packets is that the one containing the character from the random payload has a ttl of
-1 + (approximate) ttl of the firewall and the other one has a normal ttl (of 32). Both of the packets have the
-same sequence number and the same ack. After sending one character from each payload, I increment the sequence
-number by one, keeping ack the same. Then, after both payloads have been sent in their entirety, I listen for
-incoming packages from the server for 5 seconds and return all of their payloads appended in a list.
-This strategy, given the approximate starting ttl of the firewall being between the actual ttl of the firewall and
-minus 1 that of the server, works undetected. This is because the firewall (because it's stateful) would take both
-of the packets as if they were part of the same payload and concatenate them together, meaning that after all the
-packets have been sent, the firewall would think that I have sent a payload of a concatenation of the trigger payload
-and the random payload character-by-character. This would prevent the firewall from being triggered. Also, since the
-packets with the random payload had a shorter ttl than the server, they would expire and never reach the server, so
-the server would receive the intended triggering payload without interference from the firewall.
+My evasion strategy is very similar to what was discussed in lecture. I have two payloads of the same size. One triggers the firewall and the other is a randomly generated string of lowercase letters. Initially, I do the normal handshake with the server. After the ACK, I start sending both of the payloads one character at a time. The only difference between the two packets is that the one containing the character from the random payload has a ttl of 1 + (approximate) ttl of the firewall and the other one has a normal ttl (of 32). Both of the packets have the same sequence number and the same ack. After sending one character from each payload, I increment the sequence number by one, keeping ack the same. Then, after both payloads have been sent in their entirety, I listen for incoming packages from the server for 5 seconds and return all of their payloads appended in a list.
+
+This strategy, given the approximate starting ttl of the firewall being between the actual ttl of the firewall and minus 1 that of the server, works undetected. This is because the firewall (because it's stateful) would take both of the packets as if they were part of the same payload and concatenate them together, meaning that after all the packets have been sent, the firewall would think that I have sent a payload of a concatenation of the trigger payload and the random payload character-by-character. This would prevent the firewall from being triggered. Also, since the packets with the random payload had a shorter ttl than the server, they would expire and never reach the server, so the server would receive the intended triggering payload without interference from the firewall.
 
