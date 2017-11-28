@@ -171,13 +171,16 @@ class PacketUtils:
     def evade(self, target, msg, ttl):
         # Handshake #
 
-        port = random.randint(2000, 30000)
+        port, s_seq = 0, 0
         # SYN sent
-        pckt = self.send_pkt(flags="S", sport=port)
-        s_seq = pckt[TCP].seq
-        # SYN/ACK received?
-        get = self.get_pkt()
-        if not get or TCP not in get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
+        get = None
+        while not get:
+            port = random.randint(2000, 30000)
+            pckt = self.send_pkt(flags="S", sport=port)
+            s_seq = pckt[TCP].seq
+            # SYN/ACK received?
+            get = self.get_pkt()
+        if TCP not in get or get[TCP].flags != (SYN | ACK):  # check for syn/ack flag
             return "DEAD"
         d_seq = get[TCP].seq
         d_ack = get[TCP].ack
@@ -198,7 +201,7 @@ class PacketUtils:
         rv = []
         rp = self.get_pkt(max(0, timeout - time.time()))
         while rp:
-            if 'Raw' in rp:
+            if 'Raw' in rp and not isTimeExceeded(rp):
                 rv.append(rp['Raw'].load)
             rp = self.get_pkt(max(0, timeout - time.time()))
         print ''.join(rv)
