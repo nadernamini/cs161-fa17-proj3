@@ -191,8 +191,8 @@ class PacketUtils:
             print(i, msg[i])
             ran_ch = random.choice(string.ascii_lowercase)
             pckt = self.send_pkt(flags="PA", payload=msg[i],
-                                 sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 2)
-            ran_pckt = self.send_pkt(flags="PA", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl - 2)
+                                 sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 20)
+            ran_pckt = self.send_pkt(flags="PA", payload=ran_ch, sport=port, seq=d_ack + i, ack=d_seq + 1, ttl=ttl + 1)
 
         timeout = time.time() + 5
         rv = []
